@@ -1,4 +1,3 @@
-
 import datetime
 import sys
 
@@ -13,13 +12,12 @@ from flask import (
     url_for,
 )
 
-from utils.caching import cache
 from database import db
-from forms import ArtistForm, VenueForm, ShowForm
+from forms import ArtistForm, ShowForm, VenueForm
 from models.models import Artist, Show, Venue
+from utils.caching import cache
 
 route_blueprint = Blueprint("routes", __name__)
-
 
 
 @route_blueprint.route("/")
@@ -155,7 +153,6 @@ def show_venue(venue_id):
     return render_template("pages/show_venue.html", venue=data)
 
 
-
 @route_blueprint.route("/venues/create", methods=["GET"])
 @cache.cached(timeout=50)
 def create_venue_form():
@@ -235,7 +232,6 @@ def delete_venue(venue_id):
         flash("Venue " + request.form["name"] + " was successfully deleted!")
 
     return render_template("pages/home.html")
-
 
 
 @route_blueprint.route("/artists")
@@ -335,7 +331,6 @@ def show_artist(artist_id):
     }
 
     return render_template("pages/show_artist.html", artist=data)
-
 
 
 @route_blueprint.route("/artists/<int:artist_id>/edit", methods=["GET"])
@@ -551,7 +546,6 @@ def create_show_submission():
         # on successful db insert, flash success
         flash("Show was successfully listed!")
     return render_template("pages/home.html")
-
 
 
 @route_blueprint.errorhandler(404)

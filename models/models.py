@@ -6,7 +6,6 @@ from database import db
 
 
 class Venue(db.Model):
-
     __tablename__ = "Venue"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -69,7 +68,6 @@ class Venue(db.Model):
 
 
 class Artist(db.Model):
-
     __tablename__ = "Artist"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -129,7 +127,6 @@ class Artist(db.Model):
 
 
 class Show(db.Model):
-
     __tablename__ = "Shows"
 
     id = db.Column(db.Integer, primary_key=True)
