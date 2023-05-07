@@ -1,7 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
 
-from sqlalchemy.dialects.postgresql.base import PGDialect
-
 
 db = SQLAlchemy()
 
